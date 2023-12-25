@@ -2,12 +2,16 @@
 using CarManagmentSystem.MyDatabase;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Net;
+using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http.Results;
-
-//using System.Web.Http;
 using System.Web.Mvc;
 
 
@@ -17,8 +21,8 @@ namespace CarManagmentSystem.Controllers
     {
         private readonly DataContext _context = new DataContext();
 
-        // POST: Product/Create
-        [HttpPost]
+        // POST: CarShop/Create
+        
         public async Task<ActionResult> CreateProduct([System.Web.Http.FromBody] Cars data)
         {
             if (data == null)
@@ -32,20 +36,83 @@ namespace CarManagmentSystem.Controllers
             return Json(data);
         }
 
-        public DeleteProduct(int id)
+        // DELETE: CarShop/DeleteProduct/{id}
+        [HttpDelete]
+        public async Task<ActionResult> DeleteProduct(int id)
         {
-            return;
+
+            var data = await _context.Cars.FindAsync(id);
+
+            if (data == null)
+            {
+                throw new Exception();
+            }
+
+            _context.Cars.Remove(data);
+            await _context.SaveChangesAsync();
+
+            return Json(data);
+                
         }
 
-        public UpdateProduct()
+        // PUT: CarShop/UpdateProduct/{id}
+        [HttpPut]
+        public async Task<ActionResult> UpdateProduct(int Id, [System.Web.Http.FromBody] Cars data)
         {
-            return;
+
+            if (Id != data.Id)
+            {
+                throw new Exception();
+            }
+            var existingData = await _context.Cars.FindAsync(Id);
+
+            //existingData.Image = data.Image;
+            //existingData.Name = data.Name;
+            //existingData.Year = data.Year;
+            //existingData.Miles = data.Miles;
+            //existingData.Company = data.Company;
+            //existingData.Type = data.Type;
+
+            _context.Entry(existingData).CurrentValues.SetValues(data);
+
+            _context.Entry(existingData).State = EntityState.Modified;
+
+            try
+            {
+
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new DbUpdateConcurrencyException();
+            }
+            
+            return Json(data);
         }
 
-        public ViewProduct(int id)
+        //[HttpGet]
+        //public  ActionResult ViewProduct()
+        //{
+        //    //var products = await _context.Products.ToListAsync();
+
+        //    var dataList = _context.Cars.ToList();
+        //    return HttpRequestWrapper(dataList);
+        //}
+
+        [HttpGet]
+        public async Task<ActionResult> GetAllProducts()
         {
-            return;
+            var products = await _context.Cars.ToListAsync();
+
+            if (products == null || products.Count == 0)
+            {
+                return Content("No products found");
+            }
+
+            return Json(products, JsonRequestBehavior.AllowGet);
         }
+
+
     }
 }
         
