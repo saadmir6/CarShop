@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<CarManagmentSystem.Models.Cars>
+@{
     ViewBag.Title = "About";
 }
 <main aria-labelledby="title">
@@ -6,4 +7,12 @@
     <h3>@ViewBag.Message</h3>
 
     <p>Use this area to provide additional information.</p>
+
+    <div>
+        @foreach (var pro in Model)
+            {
+                <div>@pro.Year</div>
+                <div>@pro.Id</div>
+            }
+    </div>
 </main>

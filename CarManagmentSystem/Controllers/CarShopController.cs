@@ -21,8 +21,17 @@ namespace CarManagmentSystem.Controllers
     {
         private readonly DataContext _context = new DataContext();
 
-        // POST: CarShop/Create
-        
+
+        public ActionResult Index()
+        {
+
+            var product = _context.Cars.ToList();
+
+            return View(product);
+        }
+
+
+        // POST: CarShop/CreateProduct
         public async Task<ActionResult> CreateProduct([System.Web.Http.FromBody] Cars data)
         {
             if (data == null)
@@ -36,24 +45,20 @@ namespace CarManagmentSystem.Controllers
             return Json(data);
         }
 
+
         // DELETE: CarShop/DeleteProduct/{id}
         [HttpDelete]
         public async Task<ActionResult> DeleteProduct(int id)
         {
 
-            var data = await _context.Cars.FindAsync(id);
-
-            if (data == null)
-            {
-                throw new Exception();
-            }
-
+            var data = await _context.Cars.FindAsync(id) ?? throw new Exception(); // Using null-coalescing operator
             _context.Cars.Remove(data);
             await _context.SaveChangesAsync();
 
             return Json(data);
-                
+
         }
+
 
         // PUT: CarShop/UpdateProduct/{id}
         [HttpPut]
@@ -65,13 +70,6 @@ namespace CarManagmentSystem.Controllers
                 throw new Exception();
             }
             var existingData = await _context.Cars.FindAsync(Id);
-
-            //existingData.Image = data.Image;
-            //existingData.Name = data.Name;
-            //existingData.Year = data.Year;
-            //existingData.Miles = data.Miles;
-            //existingData.Company = data.Company;
-            //existingData.Type = data.Type;
 
             _context.Entry(existingData).CurrentValues.SetValues(data);
 
@@ -86,33 +84,9 @@ namespace CarManagmentSystem.Controllers
             {
                 throw new DbUpdateConcurrencyException();
             }
-            
+
             return Json(data);
-        }
-
-        //[HttpGet]
-        //public  ActionResult ViewProduct()
-        //{
-        //    //var products = await _context.Products.ToListAsync();
-
-        //    var dataList = _context.Cars.ToList();
-        //    return HttpRequestWrapper(dataList);
-        //}
-
-        [HttpGet]
-        public async Task<ActionResult> GetAllProducts()
-        {
-            var products = await _context.Cars.ToListAsync();
-
-            if (products == null || products.Count == 0)
-            {
-                return Content("No products found");
-            }
-
-            return Json(products, JsonRequestBehavior.AllowGet);
-        }
-
-
+        }  
     }
 }
         

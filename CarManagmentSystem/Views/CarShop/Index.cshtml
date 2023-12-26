@@ -1,0 +1,26 @@
+﻿@model  List<CarManagmentSystem.Models.Cars>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<main>
+      
+    <div>
+        @foreach (var product in Model)
+        {
+            <div>@product.Year</div>
+
+
+        }
+    </div>
+        
+    
+</main>
+
+
+
+
+
