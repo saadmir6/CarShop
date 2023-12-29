@@ -1,0 +1,56 @@
+﻿@model  List<CarManagmentSystem.Models.Cars>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .container {
+        max-width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        margin-top: 50px;
+        background-color: #000000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text-container {
+        flex-grow: 1;
+        margin-left: 20px;
+        color: ghostwhite;
+    }
+</style>
+
+
+<main>
+    <div class="container ">
+        <div class="image-container">
+            <img src="~/Content/Images/CoverImage2.jpg" alt="Description of the image">
+        </div>
+        <div class="text-container">
+            <p>At Car Shop, we offer a wide range of services to keep your car running smoothly.
+            From oil changes and tire rotations to engine repairs and transmission services,
+            we have the expertise and experience to handle all of your car's needs.
+            Our team of certified technicians is dedicated to providing you with the highest quality service at
+            a competitive price. We are also proud to offer a wide variety of parts and accessories to help you
+            customize your car to your liking. So whether you're looking for a quick oil change or a complete
+            engine overhaul, Car Shop is the place to go.</p>
+
+            <a class="btn btn-light mt-4" href="@Url.Action("Contact", "Home")">
+                Browse all cars
+            </a>
+        </div>
+    </div>
+</main>
+
+
+
+
+

@@ -22,13 +22,13 @@ namespace CarManagmentSystem.Controllers
         private readonly DataContext _context = new DataContext();
 
 
-        public ActionResult Index()
-        {
+        //public ActionResult Index()
+        //{
 
-            var product = _context.Cars.ToList();
+        //    var product = _context.Cars.ToList();
 
-            return View(product);
-        }
+        //    return View(product);
+        //}
 
 
         // POST: CarShop/CreateProduct

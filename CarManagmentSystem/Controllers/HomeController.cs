@@ -11,6 +11,11 @@ namespace CarManagmentSystem.Controllers
     {
 
         private readonly DataContext _dataContext = new DataContext();
+
+        public ActionResult Index()
+        {
+            return View();
+        }
         
 
         public ActionResult About()
