@@ -45,6 +45,7 @@ bld/
 /Scripts
 Scripts
 /Scripts/
+/Scripts/*.js
 
 # Visual Studio 2017 auto generated files
 Generated\ Files/

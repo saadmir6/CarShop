@@ -13,6 +13,7 @@
 /Scripts
 Scripts
 /Scripts/
+/Scripts/*.js
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

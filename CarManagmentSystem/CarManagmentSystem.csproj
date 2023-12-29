@@ -227,6 +227,8 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Images\CoverImage2.jpg" />
+    <Content Include="Content\MyCSS\IndexStylesheet.css" />
+    <Content Include="Content\Videos\video %282160p%29.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
