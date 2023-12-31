@@ -55,5 +55,12 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    padding-bottom: 70px;
 }
+
+.sell_find {
+    font-style:italic;
+    padding: 100px;
+    color: aliceblue;
+    background-color: aquamarine;
+}
+
