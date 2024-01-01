@@ -8,28 +8,7 @@
 
 <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/MyCSS/IndexStylesheet.css")" media="screen">
 
-<style>
-    .serive_p {
-        padding: 80px;
-        color: aliceblue;
-        background-color: chartreuse;
-    }
-
-    .contact_p {
-        padding: 100px;
-        color: aliceblue;
-    }
-    .sell_find {
-        font-style: italic;
-        padding: 100px;
-        color: aliceblue;
-        background-color: aquamarine;
-    }
-
-    .text_italic {
-        font-style: italic;
-    }
-</style>
+>
 
 <main>
     <div class="container ">
@@ -49,7 +28,7 @@
                 engine overhaul, Car Shop is the place to go.
             </p>
 
-            <a class="btn btn-light mt-4" href="@Url.Action("Contact", "Home")">
+            <a class="btn btn-light mt-4" href="@Url.Action("Shop", "CarShop")">
                 Browse all cars
             </a>
         </div>
@@ -74,8 +53,9 @@
     <br />
 
 
-    
         <div class="row row-cols-1 row-cols-md-3 g-4">
+        <a class="anchor_underline" href="@Url.Action("Shop", "CarShop")">
+
             <div class="col">
                 <div class="card h-100">
                     <img src="~/Content/Images/CoverImage2.jpg" class="card-img-top" alt="...">
@@ -88,6 +68,8 @@
                     </div>
                 </div>
             </div>
+        </a>
+
             <div class="col">
                 <div class="card h-100">
                     <img src="..." class="card-img-top" alt="...">
@@ -96,10 +78,13 @@
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        <small class="text-body-secondary">Last updated @DateTime.Now</small>
                     </div>
                 </div>
             </div>
+
+            <a href="@Url.Action("Shop", "CarShop")">
+
             <div class="col">
                 <div class="card h-100">
                     <img src="..." class="card-img-top" alt="...">
@@ -108,10 +93,12 @@
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        <small class="text-body-secondary">Last updated @DateTime.Now</small>
                     </div>
                 </div>
             </div>
+            </a>
+
         </div>
 </main>
 
@@ -151,8 +138,8 @@
     </p>
     <div class="contact_button">
         <span style="justify-content:space-between;">
-            <a class=" btn btn-light" href="@Url.Action("Contact", "Home")">Find our stores</a>
-            <a class="btn btn-light " href="@Url.Action("Contact", "Home")">Sell your car online</a>
+            <a class=" btn btn-light" href="@Url.Action("Stores", "CarShop")">Find our stores</a>
+            <a class="btn btn-light " href="@Url.Action("Sell", "CarShop")">Sell your car online</a>
         </span>
     </div>
 </div>
@@ -172,7 +159,7 @@
         service for your car today and embark on a journey of reliability and efficiency.
     </p>
     <span class="contact_button">
-        <a class="btn btn-light" href="@Url.Action("Contact", "Home")">Book Service</a>
+        <a class="btn btn-light" href="@Url.Action("Service", "CarShop")">Book Service</a>
     </span>
 </div>
 

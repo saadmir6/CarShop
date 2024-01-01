@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CarShopController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -263,10 +264,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\CarShop\Shop.cshtml" />
+    <Content Include="Views\CarShop\Sell.cshtml" />
+    <Content Include="Views\CarShop\Service.cshtml" />
+    <Content Include="Views\CarShop\Stores.cshtml" />
+    <Content Include="Views\CarShop\Careers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CarShop\" />
     <Folder Include="Views\Todo\" />
   </ItemGroup>
   <ItemGroup>
