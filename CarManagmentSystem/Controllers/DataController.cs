@@ -31,7 +31,7 @@ namespace CarManagmentSystem.Controllers
         //}
 
 
-        // POST: CarShop/CreateProduct
+        // POST: Data/CreateProduct
         public async Task<ActionResult> CreateProduct([System.Web.Http.FromBody] Cars data)
         {
             if (data == null)
@@ -46,7 +46,7 @@ namespace CarManagmentSystem.Controllers
         }
 
 
-        // DELETE: CarShop/DeleteProduct/{id}
+        // DELETE: Data/DeleteProduct/{id}
         [HttpDelete]
         public async Task<ActionResult> DeleteProduct(int id)
         {
@@ -60,7 +60,7 @@ namespace CarManagmentSystem.Controllers
         }
 
 
-        // PUT: CarShop/UpdateProduct/{id}
+        // PUT: Data/UpdateProduct/{id}
         [HttpPut]
         public async Task<ActionResult> UpdateProduct(int Id, [System.Web.Http.FromBody] Cars data)
         {

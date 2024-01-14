@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarManagmentSystem.MyDatabase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace CarManagmentSystem.Controllers
 {
     public class CarShopController : Controller
     {
+        private readonly DataContext _context = new DataContext();
         // GET: CarShop
         public ActionResult Careers()
         {
@@ -26,7 +28,9 @@ namespace CarManagmentSystem.Controllers
         
         public ActionResult Shop()
         {
-            return View();
+            var products = _context.Cars.ToList();
+
+            return View(products);
         }
         
         public ActionResult Stores()

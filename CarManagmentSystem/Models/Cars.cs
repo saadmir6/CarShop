@@ -11,6 +11,8 @@ namespace CarManagmentSystem.Models
 
         public string Name { get; set; }
 
+        public int Price { get; set; }
+
         public string Miles { get; set; }
 
         public int Year { get; set; }

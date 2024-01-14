@@ -205,6 +205,10 @@
     <Compile Include="Migrations\202312232109290_CarsTable.designer.cs">
       <DependentUpon>202312232109290_CarsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401031749378_Price.cs" />
+    <Compile Include="Migrations\202401031749378_Price.designer.cs">
+      <DependentUpon>202401031749378_Price.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cars.cs" />
     <Compile Include="MyDatabase\DataContext.cs" />
@@ -304,6 +308,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202312232109290_CarsTable.resx">
       <DependentUpon>202312232109290_CarsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401031749378_Price.resx">
+      <DependentUpon>202401031749378_Price.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
