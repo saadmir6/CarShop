@@ -22,15 +22,6 @@ namespace CarManagmentSystem.Controllers
         private readonly DataContext _context = new DataContext();
 
 
-        //public ActionResult Index()
-        //{
-
-        //    var product = _context.Cars.ToList();
-
-        //    return View(product);
-        //}
-
-
         // POST: Data/CreateProduct
         public async Task<ActionResult> CreateProduct([System.Web.Http.FromBody] Cars data)
         {
