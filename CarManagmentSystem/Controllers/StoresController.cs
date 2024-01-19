@@ -2,7 +2,9 @@
 using CarManagmentSystem.MyDatabase;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
@@ -23,28 +25,58 @@ namespace CarManagmentSystem.Controllers
 
 
         // POST: Stores/AddStore
-        public async Task<ActionResult> AddStore([System.Web.Http.FromBody] StoresData data)
+        public ActionResult AddStore([System.Web.Http.FromBody] StoresData data)
         {
-            //if (data == null) { return Content("Invalid Data Entered"); }
 
+            // if (data == null) { return Content("Invalid Data Entered"); 
             //_context.storesData.Add(data);
-            //await _context.SaveChangesAsync();
+            //_context.SaveChangesAsync();
             //return Json(data);
 
-            //var _data = (data == null) ? Content("Invalid data entered") : _context.storesData.Add(data);
+
+            _context.storesData.Add(data ?? null);
+            _context.SaveChanges();
+            return Json(data);
+
+
 
         }
 
         // DELETE: Stores/DeleteData/{id}
         public async Task<ActionResult> DeleteData(int id)
         {
-
+            var data = await _context.storesData.FindAsync(id) ?? throw new Exception();
+            _context.storesData.Remove(data);
+            _context.SaveChanges();
+            return Json(data);
         }
+        
+            
 
         //PUT: Stores/PutData/{id}
-        public async Task<ActionResult> PutData(int id)
+        public async Task<ActionResult> PutData(int id, [FromBody] StoresData data)
         {
+            if (id != data.Id)
+            {
+                throw new Exception();
+            }
 
+            var existingData = await _context.storesData.FindAsync(data.Id);
+
+            _context.Entry(existingData).CurrentValues.SetValues(data);
+
+            _context.Entry(existingData).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return Json(data);
         }
     }
 }

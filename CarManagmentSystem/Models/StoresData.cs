@@ -17,10 +17,10 @@ namespace CarManagmentSystem.Models
 
         public string ShowroomDays { get; set; }
 
-        public int ShowroomHours { get; set; }
+        public string ShowroomHours { get; set; }
 
         public string ServiceDays { get; set; }
 
-        public int ServiceHours { get; set; }  
+        public string ServiceHours { get; set; }  
     }
 }

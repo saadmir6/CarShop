@@ -214,6 +214,10 @@
     <Compile Include="Migrations\202401151922411_storesData.designer.cs">
       <DependentUpon>202401151922411_storesData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401192008135_PropertyChange.cs" />
+    <Compile Include="Migrations\202401192008135_PropertyChange.designer.cs">
+      <DependentUpon>202401192008135_PropertyChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cars.cs" />
     <Compile Include="Models\StoresData.cs" />
@@ -321,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401151922411_storesData.resx">
       <DependentUpon>202401151922411_storesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401192008135_PropertyChange.resx">
+      <DependentUpon>202401192008135_PropertyChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

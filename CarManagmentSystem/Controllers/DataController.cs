@@ -43,7 +43,10 @@ namespace CarManagmentSystem.Controllers
         {
 
             var data = await _context.Cars.FindAsync(id) ?? throw new Exception(); // Using null-coalescing operator
+
+
             _context.Cars.Remove(data);
+
             await _context.SaveChangesAsync();
 
             return Json(data);
