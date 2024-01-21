@@ -17,11 +17,11 @@ namespace CarManagmentSystem.Controllers
         private readonly DataContext _context = new DataContext();
 
 
-        // GET: Stores
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //// GET: Stores
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
 
         // POST: Stores/AddStore

@@ -10,6 +10,7 @@ namespace CarManagmentSystem.Controllers
     public class CarShopController : Controller
     {
         private readonly DataContext _context = new DataContext();
+
         // GET: CarShop
         public ActionResult Careers()
         {
@@ -35,7 +36,10 @@ namespace CarManagmentSystem.Controllers
         
         public ActionResult Stores()
         {
-            return View();
+            var stores = _context.storesData.ToList();
+
+            return View(stores);
+
         }
     }
 }

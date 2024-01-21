@@ -1,0 +1,25 @@
+﻿@model List<CarManagmentSystem.Models.StoresData>
+
+@{
+    ViewBag.Title = "Stores";
+}
+
+<main>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4   ">
+            @foreach (var store in Model)
+            {
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@store.Address</h5>
+                            <p class="card-text">@store.AddressDetail</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+             }
+        </div>
+    </div>
+</main>
+

@@ -281,12 +281,11 @@
     <Content Include="Views\CarShop\Shop.cshtml" />
     <Content Include="Views\CarShop\Sell.cshtml" />
     <Content Include="Views\CarShop\Service.cshtml" />
-    <Content Include="Views\CarShop\Stores.cshtml" />
+    <Content Include="Views\Stores\Stores.cshtml" />
     <Content Include="Views\CarShop\Careers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Stores\" />
     <Folder Include="Views\Todo\" />
   </ItemGroup>
   <ItemGroup>
