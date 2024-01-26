@@ -17,11 +17,11 @@ namespace CarManagmentSystem.Controllers
         private readonly DataContext _context = new DataContext();
 
 
-        //// GET: Stores
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+       public ActionResult Stores()
+        {
+            var stores = _context.storesData.ToList();
+            return View(stores);
+        }
 
 
         // POST: Stores/AddStore
@@ -36,10 +36,7 @@ namespace CarManagmentSystem.Controllers
 
             _context.storesData.Add(data ?? null);
             _context.SaveChanges();
-            return Json(data);
-
-
-
+            return Json(data)
         }
 
         // DELETE: Stores/DeleteData/{id}

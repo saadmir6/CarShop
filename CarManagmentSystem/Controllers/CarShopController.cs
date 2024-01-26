@@ -33,13 +33,5 @@ namespace CarManagmentSystem.Controllers
 
             return View(products);
         }
-        
-        public ActionResult Stores()
-        {
-            var stores = _context.storesData.ToList();
-
-            return View(stores);
-
-        }
     }
 }

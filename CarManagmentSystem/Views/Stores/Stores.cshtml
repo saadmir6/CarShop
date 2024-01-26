@@ -6,15 +6,49 @@
 
 <main>
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4   ">
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center m-1 ">
             @foreach (var store in Model)
             {
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">@store.Address</h5>
-                            <p class="card-text">@store.AddressDetail</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title">
+                                @store.Address
+                            </h5>
+                            <p class="card-text">
+                                @store.AddressDetail
+                            </p>
+                            <h5 class="card-title">
+                                Telephone
+                            </h5>
+                            <p class="card-text">
+                                @store.Telephone
+                            </p>
+                            <h5 class="card-title">
+                                Showroom Days
+                            </h5>
+                            <p class="card-text">
+                                @store.ShowroomDays
+                            </p>
+                            <h5 class="card-title">
+                                Showroom Hours
+                            </h5>
+                            <p class="card-text">
+                                @store.ShowroomHours
+                            </p>
+                            <h5 class="card-title"> 
+                                Service Days
+                            </h5>
+                            <p class="card-text">
+                                @store.ServiceDays
+                            </p>
+                            <h5 class="card-title">
+                                Service Hours
+                            </h5>
+                            <p class="card-text">
+                                @store.ShowroomHours
+                            </p>
+                            <a href="#" class="btn btn-primary">Go to stores location</a>
                         </div>
                     </div>
                 </div>
