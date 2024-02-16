@@ -22,10 +22,10 @@ namespace CarManagmentSystem.Controllers
             return View();
         }
         
-        public ActionResult Service()
-        {
-            return View();
-        }
+        //public ActionResult Service()
+        //{
+        //    return View();
+        //}
         
         public ActionResult Shop()
         {

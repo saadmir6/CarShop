@@ -198,6 +198,7 @@
     <Compile Include="Controllers\CarShopController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceDataController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,8 +219,13 @@
     <Compile Include="Migrations\202401192008135_PropertyChange.designer.cs">
       <DependentUpon>202401192008135_PropertyChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402032109329_ServiceTable.cs" />
+    <Compile Include="Migrations\202402032109329_ServiceTable.designer.cs">
+      <DependentUpon>202402032109329_ServiceTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cars.cs" />
+    <Compile Include="Models\Service.cs" />
     <Compile Include="Models\StoresData.cs" />
     <Compile Include="MyDatabase\DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -280,9 +286,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CarShop\Shop.cshtml" />
     <Content Include="Views\CarShop\Sell.cshtml" />
-    <Content Include="Views\CarShop\Service.cshtml" />
     <Content Include="Views\Stores\Stores.cshtml" />
     <Content Include="Views\CarShop\Careers.cshtml" />
+    <Content Include="Views\ServiceData\ServiceTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401192008135_PropertyChange.resx">
       <DependentUpon>202401192008135_PropertyChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402032109329_ServiceTable.resx">
+      <DependentUpon>202402032109329_ServiceTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

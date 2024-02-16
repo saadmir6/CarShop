@@ -36,7 +36,7 @@ namespace CarManagmentSystem.Controllers
 
             _context.storesData.Add(data ?? null);
             _context.SaveChanges();
-            return Json(data)
+            return Json(data);
         }
 
         // DELETE: Stores/DeleteData/{id}

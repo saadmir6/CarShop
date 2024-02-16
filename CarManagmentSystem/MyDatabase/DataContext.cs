@@ -18,5 +18,6 @@ namespace CarManagmentSystem.MyDatabase
 
         public DbSet<Cars> Cars { get; set; }
         public DbSet<StoresData> storesData { get; set; }
+        public DbSet<ServiceData> seriveData { get; set; }
     }
 }
